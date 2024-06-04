@@ -1,0 +1,60 @@
+Welcome to our Minishell!
+kjsdbvbo;N
+cma
+ls
+cat history.txt 
+echo -nnnn -nnn -nbonjour
+echo -nnnn -nnn -n -n -nbonjour
+$$
+kill 954878
+$$
+ln -s /bin/ls $PWD/cat
+export PATH=$PATH:$PWD
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+cat
+export PATH=$PATH:$PWD
+cat
+ls
+cat
+export PATH=$PWD:$PATH
+cat
+export PATH=$PATH:$PWD
+cat
+cat
+ls
+export PATH=$PWD:$PATH
+cat
+cat
+export PATH=$PWD:$PATH
+cat
