@@ -99,9 +99,7 @@ char	*expand(char *cmd, char **env, t_ms *ms)
 char	*verif_dollar(char *str, char **env, t_ms *ms)
 {
 	char	*new_str;
-	int		i;
 
-	i = 0;
 	if (ft_strchr(str, '$') != 0)
 	{
 		new_str = expand(str, env, ms);

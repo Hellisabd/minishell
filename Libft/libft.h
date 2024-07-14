@@ -26,6 +26,7 @@
 # include <errno.h>
 # include <sys/wait.h>
 # include "get_next_line.h"
+# include "../minishell.h"
 # include <stdio.h>
 
 typedef struct s_marche{
@@ -74,6 +75,7 @@ void	ft_lstadd_front(t_Node **lst, t_Node *new);
 void	ft_lstdelone(t_Node *lst);
 void	ft_lstclear(t_Node **lst);
 void	*ft_calloc(size_t nmemb, size_t size);
+size_t	count_words_isspace(char *s);
 void	ft_free_tab_int(int **tab);
 char	find_first_c(char *str, char c2, char c1);
 char	*ft_substr(char *s, unsigned int start, size_t len);

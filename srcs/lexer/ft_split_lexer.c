@@ -49,11 +49,11 @@ bool	inside_thing_split(char *line, int size)
 	return (false);
 }
 
-static	int	ft_splitsplit(char *s, char c, t_m *var, char **res)
+static	int	ft_splitsplit(char *s, t_m *var, char **res)
 {
-	if (s[var->i] != c && var->h < 0)
+	if (!is_w_space(s[var->i]) && var->h < 0)
 		var->h = var->i;
-	else if (((s[var->i] == c || var->i == ft_strlen(s)) && var->h >= 0
+	else if (((is_w_space(s[var->i]) || var->i == ft_strlen(s)) && var->h >= 0
 			&& inside_thing_split(s, var->i)) || s[var->i] == '\0')
 	{
 		res[var->j] = fill_dest(s, var);
@@ -65,7 +65,7 @@ static	int	ft_splitsplit(char *s, char c, t_m *var, char **res)
 	return (1);
 }
 
-char	**ft_split_lexer(char *s, char c)
+char	**ft_split_lexer(char *s)
 {
 	char	**res;
 	t_m		var;
@@ -75,12 +75,12 @@ char	**ft_split_lexer(char *s, char c)
 	var.j = 0;
 	var.h = -1;
 	var.i = 0;
-	res = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	res = (char **)malloc((count_words_isspace(s) + 1) * sizeof(char *));
 	if (!res)
 		return (NULL);
 	while (var.i <= ft_strlen(s))
 	{
-		if (ft_splitsplit(s, c, &var, res) == 0)
+		if (ft_splitsplit(s, &var, res) == 0)
 			return (NULL);
 	}
 	res[var.j] = 0;

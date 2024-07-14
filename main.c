@@ -21,6 +21,7 @@ int	main(int argc, char **argv, char **env)
 
 	(void)argv;
 	argc = 0;
+	(void)argc;
 	ms.history = open("history.txt", O_RDWR | O_APPEND, 0644);
 	line = get_next_line(ms.history);
 	line = ft_strtrim(line, "\n");

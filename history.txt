@@ -58,3 +58,7 @@ cat
 cat
 export PATH=$PWD:$PATH
 cat
+	 cd
+cat | cat | ls
+	cd
+	cd ..

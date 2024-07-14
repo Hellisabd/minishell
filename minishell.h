@@ -158,7 +158,7 @@ int		is_w_space(char line);
 t_lexer	**lexer(t_ms *ms, char **env);
 void	ft_add_back_lexer(t_lexer **lexer, char *str);
 int		inside_thing(char *line, int size, t_ms *ms);
-char	**ft_split_lexer(char *s, char c);
+char	**ft_split_lexer(char *s);
 int		get_token(t_lexer **lexer, t_ms *ms);
 void	printlist(t_lexer *node);
 void	ft_add_spaces_everywhere(char *our_line, t_ms *ms, int *i, int *j);

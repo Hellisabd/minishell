@@ -12,6 +12,27 @@
 
 #include "libft.h"
 
+size_t	count_words_isspace(char *s)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (*s)
+	{
+		if (!is_w_space(*s) && j == 0)
+		{
+			j = 1;
+			i++;
+		}
+		else if (is_w_space(*s))
+			j = 0;
+		s++;
+	}
+	return (i);
+}
+
 size_t	count_words(char *s, char c)
 {
 	size_t	i;
