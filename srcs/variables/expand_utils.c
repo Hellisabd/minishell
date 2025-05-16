@@ -6,13 +6,13 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:13:45 by amirloup          #+#    #+#             */
-/*   Updated: 2024/05/14 17:18:37 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:37:12 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../minishell.h"
 
-void	lol(int i)
+void	do_nothing(int i)
 {
 	(void)i;
 }

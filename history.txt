@@ -62,3 +62,14 @@ cat
 cat | cat | ls
 	cd
 	cd ..
+ls
+cd 
+	cat Makefile
+	cd Desktop/
+ls
+ls
+cd cleaning_hub/
+ls
+make git
+cd minishell/
+make git

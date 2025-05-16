@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amirloup <amirloup@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:17:01 by bgrosjea          #+#    #+#             */
-/*   Updated: 2024/05/30 13:56:11 by amirloup         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:37:12 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,7 +227,7 @@ void	dollar_question(t_expand *ex, t_ms *ms);
 void	dollar_stuff(char **env, char *cmd, t_expand *ex);
 void	expandables4(t_expand *ex);
 bool	*new_tabool(char **env, bool *tab);
-void	lol(int i);
+void	do_nothing(int i);
 
 // BUILTINS
 int		handle_exit(char **cmd, t_ms *ms, char **env, t_parser *parser);
@@ -268,7 +268,6 @@ void	parent(int signum);
 void	sig(t_ms *ms);
 void	h_s(int signum);
 
-//PROUT.V2
 
 void	pid(void);
 

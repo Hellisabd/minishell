@@ -6,7 +6,7 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 13:56:18 by bgrosjea          #+#    #+#             */
-/*   Updated: 2024/05/28 09:16:14 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:35:31 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ t_lexer	**lexer(t_ms *ms, char **env)
 		return (NULL);
 	*lexer = NULL;
 	ms->line = init_lexer(ms);
-	tab = ft_split_lexer(ms->line, ' ');
+	tab = ft_split_lexer(ms->line);
 	size = size_tab(tab);
 	while (size > ++i)
 	{

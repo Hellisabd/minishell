@@ -6,7 +6,7 @@
 /*   By: bgrosjea <bgrosjea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 11:18:09 by amirloup          #+#    #+#             */
-/*   Updated: 2024/05/21 13:49:59 by bgrosjea         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:37:12 by bgrosjea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ char	*expand(char *cmd, char **env, t_ms *ms)
 			ex.stock = 0;
 		}
 		else
-			lol((ex.i++, ex.stock++, 0));
+			do_nothing((ex.i++, ex.stock++, 0));
 	}
 	expandables3(cmd, &ex);
 	if (!ex.line)
