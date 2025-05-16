@@ -1,4 +1,4 @@
-# Minishell – @42Born2Code
+# Minishell
 
 > *As beautiful as a shell*
 
@@ -6,7 +6,7 @@
 
 ## About
 
-**Minishell** is the second project of the Unix branch at 42. It is a *minimum-viable* clone of a real Unix shell whose main goal is to give students a deep understanding of **process creation**, **synchronisation**, and **file-descriptor management** in C.
+**Minishell** is the first group project of the common core at 42. It is a *minimum-viable* clone of a real Unix shell whose main goal is to give students a deep understanding of **process creation**, **synchronisation**, and **file-descriptor management** in C.
 
 ---
 
@@ -23,7 +23,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/<user>/minishell.git
+git clone https://github.com/Hellisabd/minishell.git
 
 # Build from the project root
 cd minishell
@@ -68,14 +68,6 @@ make
   - `exit`
 - The resulting binary **must be named** `minishell`.
 - Linking with your personal **libft** is allowed.
-
-### Bonus
-
-- Advanced **signal management** (`Ctrl+C`, `SIGINT`, etc.).
-- Robust handling of **PATH** permissions and related errors.
-- Support for **multiple commands** via semicolons `;`.
-- Extras: `readline` history, autocompletion, wildcard `*`, parentheses `()`, logical operators `&&` / `||`.
-
 ---
 
 ## Architecture (High‑level)
@@ -88,18 +80,8 @@ make
 ---
 
 ## Notes
-
-- The codebase is **fully commented** for easier navigation.  
-- Tabs are set to width 4 — any “weird” spacing is intentional.  
+- This is our first group project; everything is functional, but the way we've coded it is probably not optimal.
 - Before suggesting alternative APIs, remember the strict 42 whitelist. 😉
-
----
-
-## Sponsors
-
-<div align="center">
-  <sup>*Sponsor*</sup>
-</div>
 
 ---
 
