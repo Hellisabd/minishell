@@ -1,94 +1,105 @@
-Minishell
+Minishell – @42Born2Code
 
-    42 curriculum project: re‑implementing a minimal Unix shell in C.
+As beautiful as a shell
 
-TL;DR
+About
 
-Minishell pushes students to master:
+Minishell is the second project of the Unix branch at 42. It is a minimum‑viable clone of a real Unix shell whose main goal is to give students a deep understanding of process creation, synchronisation, and file‑descriptor management in C.
 
-    Process management (fork, execve, waitpid)
+Installation & Usage
 
-    File descriptors & redirections (dup2, <, >, >>, <<)
+Requirements
 
-    Pipes to chain commands
+GNU make ≥ 3.81
 
-    Environment handling ($PATH, variables, exit status)
+GCC ≥ 4.2.1
 
-… all while complying with the Norminette style guide and ensuring flawless memory management.
-Context & Learning Goals
+(These are the versions used during development.)
 
-The assignment is to “re‑create our own little Bash”:
-read a command line, lex it, parse it, then execute either an external binary or a built‑in (echo, cd, etc.).
+Building the program
 
-Along the way you will learn:
-
-    Process creation: fork, execve, waitpid
-
-    FD duplication & pipeline creation: dup2, pipe
-
-    The internal pipeline LEX ➜ PARSE ➜ EXPAND ➜ EXEC recommended by 42 Docs
-
-Main Features
-Feature	Implemented Details
-Command execution	Relative paths, absolute paths, or resolution via $PATH.
-Redirections	<, >, >>, heredoc <<.
-Pipes	Chain `cmd1	cmd2	cmd3` with N‑1 pipes for N commands.
-Expansions	Environment variables ($HOME) and exit code ($?).
-Quoting	Correct handling of ' and " (except across newlines).
-Signals	Ctrl‑C (SIGINT), Ctrl-\ (SIGQUIT), Ctrl‑D (EOF) handled gracefully.
-Built‑ins	echo, pwd, cd, env, export, unset, exit.
-
-    Optional bonuses: readline history, autocompletion, wildcard *, parentheses (), && / || operators.
-
-Internal Architecture
-
-    Lexer: splits user input into tokens (words, redirections, pipes…).
-
-    Parser: checks grammar, builds an AST, detects syntax errors.
-
-    Expander: resolves variables, removes quotes, handles here‑docs.
-
-    Executor: spawns processes, sets up pipes/redirections, launches binaries & built‑ins, returns the exit status.
-
-Technical Requirements (42)
-
-    Language: ANSI C (C99), built with a Makefile
-
-    Norminette: zero error / warning
-
-    Allowed libraries: readline, standard libc functions
-
-    Memory leaks: forbidden — Valgrind must stay silent
-
-    Indicative workload: 4–6 weeks for a pair of students
-
-Build & Run
-# Clone and build
+# Clone the repository
 git clone https://github.com/<user>/minishell.git
-cd minishell && make
 
-# Launch the shell
+# Build from the project root
+cd minishell
+make
+
+Running the program
+
 ./minishell
 
-Examples:
-> ls -la | grep ".c" > sources.txt
-> export PATH=$PATH:/custom/bin
-> echo "Last exit code = $?"
-Experience & Soft Skills
+Main Project Instructions
 
-    Pair programming: clear task split (e.g. parsing vs signals)
+Mandatory
 
-    Project management: modular design, git workflow, code reviews
+Written only in C and built with a Makefile (make && ./minishell).
 
-    Advanced debugging: strace, valgrind, gdb to tame fork bombs and memory leaks
+Must comply with the Norminette coding style.
 
-Screenshot
+No memory leaks (Valgrind must remain silent).
 
-    (Add a GIF or image here to showcase the prompt — e.g. assets/minishell_demo.gif)
+Handle program interruption (e.g. Ctrl+D).
 
-License
+Implement the following built‑ins: echo, pwd, cd, env, export, unset, exit.
 
-This repository includes the official 42 subject; the implementation is 100 % original.
-Feel free to open an issue or a pull request!
+Provide comprehensive error handling without relying on errno.
 
+Allowed standard‑library calls (the usual 42 whitelist):
+
+malloc, free
+
+access
+
+open, close, read, write
+
+opendir, readdir, closedir
+
+getcwd, chdir
+
+stat, lstat, fstat
+
+fork, execve
+
+wait, waitpid, wait3, wait4
+
+signal, kill
+
+exit
+
+The resulting binary must be named minishell.
+
+You may link against your personal libft.
+
+Bonuses
+
+Signal management (Ctrl+C, SIGINT, etc.)
+
+Robust PATH permission/error handling
+
+Multiple commands via semicolons ;
+
+Extra goodies: readline history, autocompletion, wildcard *, parentheses (), logical operators && / ||.
+
+Architecture (High level)
+
+Lexer → breaks user input into tokens (words, redirections, pipes…).
+
+Parser → validates syntax & builds an AST.
+
+Expander → resolves env vars, removes quotes, manages here‑docs.
+
+Executor → spawns processes, wires pipes/redirections, runs built‑ins or external binaries, returns the exit code.
+
+Notes
+
+The entire codebase is fully commented for easier navigation.
+
+Tabs are set to width 4 — any “weird” spacing is intentional.
+
+Remember the strict function whitelist before suggesting alternative APIs. 😉
+
+Sponsors
+
+Enjoy! 🎉
 
